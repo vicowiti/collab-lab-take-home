@@ -1,10 +1,10 @@
 import React from 'react';
 
-const ImageDetailsPage = ({ selectedImg }) => {
+const ImageDetailsPage = ({ selectedImg, goBack }) => {
 	return (
 		<div>
 			<div>
-				<button>Back</button>
+				<button onClick={goBack}>Back</button>
 			</div>
 			<div>
 				<img alt="" src={selectedImg} />

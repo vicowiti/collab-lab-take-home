@@ -7,11 +7,7 @@ const ListItem = ({ item, showImgDetail }) => {
 				<h5>Name: {item.title}</h5>
 				<p>Artist: {item.artist_title}</p>
 			</li>
-			<button
-				onClick={() => showImgDetail(item.image_id, item.thumbnail.alt_text)}
-			>
-				Show Art
-			</button>
+			<button onClick={() => showImgDetail(item.image_id)}>Show Art</button>
 		</>
 	);
 };

@@ -25,11 +25,15 @@ export function App() {
 		});
 	}
 
-	function showImgDetail(id, altText) {
+	function showImgDetail(id) {
 		setShowDetails(true);
 		setSelectedImg(
 			`https://www.artic.edu/iiif/2/${id}/full/843,/0/default.jpg`
 		);
+	}
+
+	function goBack() {
+		setShowDetails(false);
 	}
 
 	return (
@@ -50,7 +54,7 @@ export function App() {
 					</ul>
 				</>
 			) : (
-				<ImageDetailsPage selectedImg={selectedImg} />
+				<ImageDetailsPage goBack={goBack} selectedImg={selectedImg} />
 			)}
 			<Footer />
 		</div>
