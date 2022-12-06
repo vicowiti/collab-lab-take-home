@@ -35,13 +35,15 @@ export function searchArtworks(query) {
 	 */
 	const requestUrl = `./ARTWORKS_SEARCH_RESULT.json`;
 
+	const endPoint = `https://api.artic.edu/api/v1/artworks/search?q=${query}&query[term][is_public_domain]=true&fields=artist_title,date_display,id,image_id,thumbnail.alt_text,thumbnail.width,thumbnail.height,title`;
+
 	/**
 	 * We know the API serves JSON data, but
 	 * it's a good idea to explicitly request JSON anyway.
 	 * */
 	const headers = { Accept: 'application/json' };
 
-	return fetch(requestUrl, { headers }).then((res) => {
+	return fetch(endPoint, { headers }).then((res) => {
 		if (res.ok) {
 			console.log('run');
 			return res.json();

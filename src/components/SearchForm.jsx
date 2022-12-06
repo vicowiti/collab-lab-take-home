@@ -11,8 +11,10 @@ export function SearchForm({ onSearchSubmit }) {
 
 	function handleFormSubmit(e) {
 		e.preventDefault();
-		onSearchSubmit(query);
-		setQuery('');
+		if (query) {
+			onSearchSubmit(query);
+			setQuery('');
+		}
 	}
 
 	return (
@@ -29,7 +31,7 @@ export function SearchForm({ onSearchSubmit }) {
 				value={query}
 				onChange={handleInputChange}
 			/>
-			<button className="button" type="submit">
+			<button className="button" disabled={!query} type="submit">
 				Search
 			</button>
 		</form>
